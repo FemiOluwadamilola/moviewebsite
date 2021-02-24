@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>cinemaNG</title>
+</head>
+<body>
+  <header>
+     <!-- <a href="#" class="logo"><img src="util/logo.png"></a> -->
+     <a href="#" class="logo">Fast & Furious</a>
+     <div class="toggle"><img src="./util/toggle.png"></div>
+  </header>
+  <div class="banner">
+    <div class="overlay">
+        <div class="content">
+          <h2> The <span>Fast & Furious 9 Trailer</span></h2>
+          <p>The first full trailer for Fast & Furious 9 has arrived! It was preceded by a long live-stream concert featuring Fast family members Cardi B, Wiz Khalifa, Charlie Puth, Ozuna, and Ludacris but now all the action-y goodness is finally here.</p>
+    
+          <a href="#" onclick="playMovieFunction()" class="playBtn"><img src="./util/play.png">Watch Trailer</a>
+        </div>
+        <div class="slide"></div>
+        <ul class="socialIcon">
+            <li><a href="#"><img src="./util/facebook.png"></a></li>
+            <li><a href="#"><img src="./util/twitter.png"></a></li>
+            <li><a href="#"><img src="./util/instagram.png"></a></li>
+        </ul>
+    </div>
+  </div>
+  <div class="movie_trailer">
+    <video src="./util/movie.mp4" controls='true'></video>
+    <img onclick="playMovieFunction()" class="close_btn" src="./util/close.png">
+  </div>
+
+  <script>
+     function playMovieFunction(){
+       const movie_trailer = document.querySelector('.movie_trailer');
+       movie_trailer.classList.toggle('showMovie');
+       const video = document.querySelector('video');
+       video.currentTime = 0;
+       video.pause();
+     }
+  </script>
+</body>
+</html>

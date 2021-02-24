@@ -1,0 +1,249 @@
+*{
+  margin:0;
+  padding:0;
+  font-family:'poppins', sans-serif;
+  box-sizing:border-box;
+}
+
+header{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:40px 100px;
+  z-index:1000;
+}
+
+/* header .logo{ max-width:120px;} */
+header .logo {
+  text-decoration:none;
+  color:#fff;
+  font-size:2rem;
+  font-weight:900;
+}
+header .toggle{ max-width:60px; cursor: pointer;}
+
+header .logo img, header .toggle img{ max-width:100%;}
+
+.banner{
+  position:relative;
+  width:100%;
+  min-height:100vh;
+  background:url('../util/fast.jpg');
+  background-position:center;
+  background-size:cover;
+}
+
+.banner .content{
+  max-width:550px;
+}
+
+.banner .content h2{
+  text-transform:uppercase;
+  font-weight:400;
+  font-size:2.5rem;
+  letter-spacing:0.1rem;
+  color:#fff;
+  margin-bottom:5px;
+}
+
+.banner .content h2 span{
+  font-weight:800;
+}
+
+.banner .content p{
+  font-size:1.2rem;
+  font-weight:300;
+  letter-spacing:0.02rem;
+  line-height:1.5rem;
+  color:#fff;
+  padding:10px;
+}
+
+.overlay{
+  width:100%;
+  height:100vh;
+  background:rgba(0,0,0,0.7);
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  z-index:2;
+  display:flex;
+  justify-content:flex-start;
+  align-items:center;
+  padding: 0 100px;
+}
+.playBtn{
+  position: relative;
+  display:inline-flex;
+  justify-content:flex-start;
+  align-items:center;
+  color:#fff;
+  text-transform:uppercase;
+  font-weight:500;
+  text-decoration:none;
+  letter-spacing:2px;
+  font-size:1.2rem;
+}
+
+.playBtn img{
+  margin-right:10px;
+  max-width:50px;
+}
+
+.playBtn:hover{
+  color:red;
+}
+.socialIcon{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  right:20px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction: column;
+}
+
+.socialIcon li{
+  list-style:none;
+}
+
+.socialIcon li a {  text-decoration:none;}
+
+.socialIcon li a img{
+  filter: invert(1);
+  transform:scale(0.6);
+}
+
+.slide{
+  position:absolute;
+  bottom:50px;
+  left:calc(50% - 250px / 2);
+  width:250px;
+  height:150px;
+  background:url('../util/ad.jpg');
+  background-size:cover;
+  cursor: pointer;
+  animation: animate 25s linear infinite;
+}
+
+@keyframes animate{
+  0%, 100%{background-position:top;}
+  45%, 55%{background-position:bottom;}
+}
+
+.movie_trailer{
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  z-index:10000;
+  background:rgba(0,0,0,0.95);
+  width:100%;
+  height:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  visibility:hidden;
+  opacity:0;
+}
+
+.showMovie{
+  visibility:visible;
+  opacity:1;
+}
+
+.movie_trailer video{
+  max-width:900px;
+  outline:none;
+}
+
+.movie_trailer .close_btn{
+  position:absolute;
+  top:30px;
+  right:30px;
+  cursor:pointer;
+  filter:invert(1);
+  max-width:32px; 
+}
+
+
+/* mobile view design */
+@media (max-width:768px){
+  header{
+    padding:20px 50px;
+  }
+
+  header .logo{
+    max-width:80px;
+    font-size:1rem;
+  }
+
+  header .toggle{
+    max-width:40px;
+  }
+
+  /* .banner {
+    padding:100px 50px;
+  } */
+  
+  .overlay{
+    flex-direction:column;
+    padding:100px 50px;
+  }
+
+  .overlay .content h2{
+    font-weight:400;
+    font-size:2rem;
+    letter-spacing:0.05rem;
+  }
+  
+  .banner .content p{
+    font-size:1rem;
+  }
+
+  .slide{
+    position: relative;
+    bottom: inherit;
+    left: 0;
+    width: 250px;
+    height: 150px;
+    margin: 20px 0;
+  }
+
+  .socialIcon{
+    position: absolute;
+    top: initial;
+    right: initial;
+    margin-top: 40px;
+    bottom:0;
+    transform:translateY(-50px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:row;
+    justify-self:flex-end;
+  }
+
+  .socialIcon li {
+    list-style:none;
+    margin: 0 5px;
+  }
+
+  .movie_trailer video{
+    max-width:90%;
+    outline:none;
+  }
+}
+
+@media  (orientation: landscape) {
+  .socialIcon{
+    align-self:flex-end;
+  }
+}
