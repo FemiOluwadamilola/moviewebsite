@@ -1,4 +1,13 @@
 # moviewebsite
-this is just a website for movie trailer and ads
+> moviewebsite is a web project where newly upcoming movies and there trailers  can be hosted !!
 
-click [me]( https://femioluwadamilola.github.io/moviewebsite/public/) to watch
+* To know how it works, click [here!](https://femioluwadamilola.github.io/moviewebsite/public/#)
+
+**Goal**
+* To enable free movie hosting
+
+**Technologies Used**
+* HTML
+* CSS
+* JAVASCRIPT 
+
